@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<product productid="indexdepot" active="1">
+	<title>indexdepot solr integration</title>
+	<description>indexdepot solr integration</description>
+	<version>0.1</version>
+	<url />
+	<versioncheckurl />
+	<dependencies>
+	</dependencies>
+	<codes>
+		<code version="0.1">
+			<installcode />
+			<uninstallcode />
+		</code>
+	</codes>
+	<templates>
+	</templates>
+	<plugins>
+		<plugin active="1" executionorder="5">
+			<title>IndexDepot Plugin - Maintenance</title>
+			<hookname>admin_maintenance</hookname>
+			<phpcode><![CDATA[include_once(DIR."/includes/indexdepot_maintenance.php");
+indexdepot_maintenance($vbulletin, $vbphrase);]]></phpcode>
+		</plugin>
+		<plugin active="1" executionorder="5">
+			<title>IndexDepot Plugin - Delete Post</title>
+			<hookname>editpost_delete_start</hookname>
+			<phpcode><![CDATA[include_once(DIR."/includes/indexdepot_index.php");
+indexdepot_delete_post($vbulletin, $postinfo);]]></phpcode>
+		</plugin>
+		<plugin active="1" executionorder="5">
+			<title>IndexDepot Plugin - New Post</title>
+			<hookname>newpost_complete</hookname>
+			<phpcode><![CDATA[include_once(DIR."/includes/indexdepot_index.php");
+indexdepot_new_post($vbulletin, $post);]]></phpcode>
+		</plugin>
+		<plugin active="1" executionorder="5">
+			<title>IndexDepot Plugin - Delete Post 2</title>
+			<hookname>postdata_delete</hookname>
+			<phpcode><![CDATA[include_once(DIR."/includes/indexdepot_index.php");
+indexdepot_delete_post_diff($vbulletin, $postid);]]></phpcode>
+		</plugin>
+		<plugin active="1" executionorder="5">
+			<title>IndexDepot Plugin - Delete Thread</title>
+			<hookname>threaddata_delete</hookname>
+			<phpcode><![CDATA[include_once(DIR."/includes/indexdepot_index.php");
+indexdepot_delete_thread($vbulletin, $threadid);]]></phpcode>
+		</plugin>
+	</plugins>
+	<phrases>
+		<phrasetype name="GLOBAL" fieldname="global">
+			<phrase name="indexdepot_apache_solr_index_data" date="0" username="" version=""><![CDATA[Index data]]></phrase>
+			<phrase name="indexdepot_apache_solr_index_data_ready" date="0" username="" version=""><![CDATA[Your data was successfully indexed]]></phrase>
+		</phrasetype>
+		<phrasetype name="Wartungs-Tools" fieldname="maintenance">
+			<phrase name="indexdepot_maintenance" date="0" username="" version=""><![CDATA[IndexDepot.com Solr index options]]></phrase>
+			<phrase name="indexdepot_rebuild_search_index" date="0" username="" version=""><![CDATA[Reindex data in Solr]]></phrase>
+		</phrasetype>
+		<phrasetype name="vBulletin-Einstellungen" fieldname="vbsettings">
+			<phrase name="setting_indexdepot_auth_desc" date="0" username="" version=""><![CDATA[Check this if you want to use http authentification]]></phrase>
+			<phrase name="setting_indexdepot_auth_title" date="0" username="" version=""><![CDATA[HTTP Authentification]]></phrase>
+			<phrase name="setting_indexdepot_host_desc" date="0" username="" version=""><![CDATA[Please specify your Solr Host]]></phrase>
+			<phrase name="setting_indexdepot_host_title" date="0" username="" version=""><![CDATA[Solr Host]]></phrase>
+			<phrase name="setting_indexdepot_password_desc" date="0" username="" version=""><![CDATA[Your http password]]></phrase>
+			<phrase name="setting_indexdepot_password_title" date="0" username="" version=""><![CDATA[Password]]></phrase>
+			<phrase name="setting_indexdepot_path_desc" date="0" username="" version=""><![CDATA[Please specify your Solr Path]]></phrase>
+			<phrase name="setting_indexdepot_path_title" date="0" username="" version=""><![CDATA[Solr Path]]></phrase>
+			<phrase name="setting_indexdepot_port_desc" date="0" username="" version=""><![CDATA[Please specify your Solr Port]]></phrase>
+			<phrase name="setting_indexdepot_port_title" date="0" username="" version=""><![CDATA[Solr Port]]></phrase>
+			<phrase name="setting_indexdepot_scheme_desc" date="0" username="" version=""><![CDATA[Check this if you want to use SSL.]]></phrase>
+			<phrase name="setting_indexdepot_scheme_title" date="0" username="" version=""><![CDATA[SSL]]></phrase>
+			<phrase name="setting_indexdepot_username_desc" date="0" username="" version=""><![CDATA[Your http username]]></phrase>
+			<phrase name="setting_indexdepot_username_title" date="0" username="" version=""><![CDATA[Username]]></phrase>
+			<phrase name="setting_indexdepot_document_number_desc" date="0" username="" version=""><![CDATA[If you want you can specify the number of documents to bulk load at once]]></phrase>
+			<phrase name="setting_indexdepot_document_number_title" date="0" username="" version=""><![CDATA[Number of documents to load]]></phrase>
+			<phrase name="settinggroup_indexdepot" date="0" username="" version=""><![CDATA[IndexDepot Search Options]]></phrase>
+		</phrasetype>
+	</phrases>
+	<options>
+		<settinggroup name="indexdepot" displayorder="590">
+			<setting varname="indexdepot_host" displayorder="10">
+				<datatype>free</datatype>
+				<defaultvalue>www.indexdepot.com</defaultvalue>
+			</setting>
+			<setting varname="indexdepot_port" displayorder="20">
+				<datatype>integer</datatype>
+				<defaultvalue>80</defaultvalue>
+			</setting>
+			<setting varname="indexdepot_path" displayorder="30">
+				<defaultvalue>/solr/core0/</defaultvalue>
+			</setting>
+			<setting varname="indexdepot_scheme" displayorder="40">
+				<datatype>boolean</datatype>
+				<optioncode>yesno</optioncode>
+				<defaultvalue>false</defaultvalue>
+			</setting>
+			<setting varname="indexdepot_auth" displayorder="50">
+				<datatype>boolean</datatype>
+				<optioncode>yesno</optioncode>
+				<defaultvalue>false</defaultvalue>
+			</setting>
+			<setting varname="indexdepot_username" displayorder="60">
+				<datatype>free</datatype>
+			</setting>
+			<setting varname="indexdepot_password" displayorder="70">
+				<datatype>free</datatype>
+			</setting>
+			<setting varname="indexdepot_document_number" displayorder="80">
+				<datatype>integer</datatype>
+				<defaultvalue>100</defaultvalue>
+			</setting>
+		</settinggroup>
+	</options>
+	<helptopics>
+	</helptopics>
+	<cronentries>
+	</cronentries>
+	<faqentries>
+	</faqentries>
+</product>
