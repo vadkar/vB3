@@ -5,7 +5,7 @@
 * Upload the schema.xml to your Solr Server
 * Change your templates
     * **navbar line 198:** 
-	<form action="search.php?do=process" method="post">` to `<form action="indexdepot_solrsearch.php?do=process" method="post">
+	`<form action="search.php?do=process" method="post">` to `<form action="indexdepot_solrsearch.php?do=process" method="post">`
 	* **navbar line 206:** `<input type="text" class="bginput" name="query" size="25" tabindex="1001" />` to `<input id="autocomplete" type="text" class="bginput" name="query" size="25" tabindex="1001" />`
 	* **search_forums line 31:** `<form action="search.php?do=process" method="post" name="vbform" id="searchform" style="display:block; margin:0px">` to `<form action="indexdepot_solrsearch.php?do=process" method="post" name="vbform" id="searchform" style="display:block; margin:0px">`
 	* **search_forums line 55:** `<input type="text" class="bginput" name="query" size="35" value="$query" style="width:250px" />` to `<input id="autocomplete" type="text" class="bginput" name="query" size="35" value="$query" style="width:250px" />`
