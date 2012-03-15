@@ -1,14 +1,14 @@
 <?php
 
-require_once (dirname(__FILE__) . '/Solr/Service.php');
-require_once (dirname(__FILE__) . '/Solr/Exception.php');
+require_once (dirname(__FILE__) . '../../Apache/Solr/Service.php');
+require_once (dirname(__FILE__) . '../../Apache/Solr/Exception.php');
 
 /**
  * http://www.indexdepot.com
  *
  * @author Vadims Karpuschkins
  */
-class Indexdepot_Apache_Solr_Service extends Apache_Solr_Service
+class Indexdepot_Solr_Service extends Apache_Solr_Service
 {
     /**
      * Server identification strings

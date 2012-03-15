@@ -6,7 +6,7 @@
  * @author Vadims Karpuschkins
  */
  
-require_once(DIR . '/includes/Apache/Indexdepot.php');
+require_once(DIR . '/includes/Indexdepot/Solr/Service.php');
 require_once(DIR . '/includes/Apache/Solr/Document.php');
 
 function indexdepot_solrsearch_connection($vbulletin)
@@ -14,12 +14,12 @@ function indexdepot_solrsearch_connection($vbulletin)
     $scheme = ($vbulletin->options['indexdepot_scheme']) ? 'https://' : 'http://';
     $username = ($vbulletin->options['indexdepot_auth']) ? $vbulletin->options['indexdepot_username'] : '';
     $password = ($vbulletin->options['indexdepot_auth']) ? $vbulletin->options['indexdepot_password'] : '';
-    $solr = new Indexdepot_Apache_Solr_Service($scheme,
-                                               $vbulletin->options['indexdepot_host'],
-                                               $vbulletin->options['indexdepot_port'],
-                                               $vbulletin->options['indexdepot_path'],
-                                               $username,
-                                               $password);
+    $solr = new Indexdepot_Solr_Service($scheme,
+                                        $vbulletin->options['indexdepot_host'],
+                                        $vbulletin->options['indexdepot_port'],
+                                        $vbulletin->options['indexdepot_path'],
+                                        $username,
+                                        $password);
     return $solr;
 }
 
