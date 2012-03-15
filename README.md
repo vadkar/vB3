@@ -20,4 +20,4 @@
 	* `</script>`
 * Go to vb/admincp/options and change the **Indexdepot Search Options**
 
-## If you do not have a Solr Server you can visit us at [www.indexdepot.com](https://www.indexdepot.com/en/ "Visit us for your o0wn Solr Index") to get your own Solr Index
+### If you do not have a Solr Server you can visit us at [www.indexdepot.com](https://www.indexdepot.com/en/ "Visit us for your o0wn Solr Index") to get your own Solr Index
