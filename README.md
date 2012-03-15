@@ -14,16 +14,16 @@
 	`<input type="text" class="bginput" name="query" size="35" value="$query" style="width:250px" />` to `<input id="autocomplete" type="text" class="bginput" name="query" size="35" value="$query" style="width:250px" />`
 	* **headinclude from line 25 add:**
 	
-	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" type="text/css" media="screen" />
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-	<script>
-	$(document).ready(function() {
-	$("input#autocomplete").autocomplete({
-	source: "indexdepot_autocomplete.php"
-	});
-	});
-	</script>
+	    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" type="text/css" media="screen" />
+	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+	    <script>
+	    $(document).ready(function() {
+	        $("input#autocomplete").autocomplete({
+	            source: "indexdepot_autocomplete.php"
+	        });
+	    });
+	    </script>
 	
 * Go to vb/admincp/options and change the **Indexdepot Search Options**
 
