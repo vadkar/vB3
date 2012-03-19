@@ -21,7 +21,9 @@
     * **search_forums line 55:** 
 	```
 	<input type="text" class="bginput" name="query" size="35" value="$query" style="width:250px" />
-	to 
+	```
+	to
+	```
 	<input id="autocomplete" type="text" class="bginput" name="query" size="35" value="$query" style="width:250px" />
 	```
     * **headinclude from line 25 add:**
