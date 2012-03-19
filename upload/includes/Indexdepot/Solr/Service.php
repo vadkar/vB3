@@ -1,29 +1,15 @@
 <?php
-/**
- * IndexDepot - vBulletin 3.x Solr Search
- * Copyright (c) 2012 IndexDepot
- *
- * This program is free software: you can redistribute it and/or
- * modify it under the terms of the GNU Lesser General Public
- * License as published by the Free Software Foundation, either
- * version 3 of the License, or (at your option) any later version.
- * 
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- * 
- * You should have received a copy of the GNU Lesser General Public
- * License along with this program. If not, please visit the Free
- * Software Foundation website at <http://www.gnu.org/licenses/>.
- *
- * @copyright  IndexDepot 2012
- * @author Vadims Karpuschkins
- * @license LGPL
- */
-require_once (dirname(__FILE__) . '../../Apache/Solr/Service.php');
-require_once (dirname(__FILE__) . '../../Apache/Solr/Exception.php');
 
+require_once (dirname(__FILE__) . '/../../Apache/Solr/Service.php');
+require_once (dirname(__FILE__) . '/../../Apache/Solr/Exception.php');
+require_once (dirname(__FILE__) . '/../../Apache/Solr/HttpTransport/Curl.php');
+require_once (dirname(__FILE__) . '/../../Indexdepot/Solr/HttpTransport/Curl.php');
+
+/**
+ * http://www.indexdepot.com
+ *
+ * @author Vadims Karpuschkins
+ */
 class Indexdepot_Solr_Service extends Apache_Solr_Service
 {
     /**
@@ -39,11 +25,10 @@ class Indexdepot_Solr_Service extends Apache_Solr_Service
 
     public function __construct($protocol = 'http://', $host = 'localhost', $port = 8180, $path = '/solr/', $username = '', $password = '', $httpTransport = false)
     {
-        parent::__construct($host, $port, $path);
-        
+        parent::__construct($host, $port, $path, new Indexdepot_Solr_HttpTransport_Curl($username, $password, $protocol) );        
         $this->setProtocol($protocol);
-        $this->setUsername($username);
-        $this->setPassword($password);
+//        $this->setUsername($username);
+//        $this->setPassword($password);
     }
     
     public function setProtocol($protocol)
@@ -92,10 +77,10 @@ class Indexdepot_Solr_Service extends Apache_Solr_Service
             $queryString = '';
         }
 
-        if (! empty($this->_username) && ! empty($this->_password)) {
-            return $this->_protocol . $this->_username . ':' . $this->_password . '@' . $this->_host . ':' . $this->_port . $this->_path . $servlet . $queryString;
-        } else {
+//        if (! empty($this->_username) && ! empty($this->_password)) {
+//            return $this->_protocol . $this->_username . ':' . $this->_password . '@' . $this->_host . ':' . $this->_port . $this->_path . $servlet . $queryString;
+//        } else {
             return $this->_protocol . $this->_host . ':' . $this->_port . $this->_path . $servlet . $queryString;
-        }
+//        }
     }    
 }
