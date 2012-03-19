@@ -19,8 +19,8 @@
 
 
 <code>
-   `<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" type="text/css" media="screen"> 
-   </link>`
+   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" type="text/css" media="screen"> 
+   </link>
 </code>
 
 <pre>
