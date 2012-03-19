@@ -18,10 +18,12 @@
 	       id="searchform" style="display:block; margin:0px">` to 
 	`<form action="indexdepot_solrsearch.php?do=process" method="post" name="vbform" 
 	       id="searchform" style="display:block; margin:0px">`
-    * **search_forums line 55:** 
+    * **search_forums line 55:**
+
 	```
 	<input type="text" class="bginput" name="query" size="35" value="$query" style="width:250px" />
 	```
+	
 	to
 
 	```
