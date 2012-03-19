@@ -16,16 +16,19 @@
     * **headinclude from line 25 add:**
 
 
-    	`<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" type="text/css" media="screen" />
-    	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
-    	<script>
-    		$(document).ready(function() {
-				$("input#autocomplete").autocomplete({
-            		source: "indexdepot_autocomplete.php"
-     			});
-    		});
-    	</script>`
+   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" type="text/css" media="screen"> 
+   </link>
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
+   </script>
+   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js">
+   </script>
+   <script>
+   	$(document).ready(function() {
+		$("input#autocomplete").autocomplete({
+   			source: "indexdepot_autocomplete.php"
+   		});
+   	});
+   </script>
 
 
 ### If you do not have a Solr Server you can visit us at [www.indexdepot.com](https://www.indexdepot.com/en/ "Visit us for your o0wn Solr Index") to get your own Solr Index
