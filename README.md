@@ -23,6 +23,7 @@
 	<input type="text" class="bginput" name="query" size="35" value="$query" style="width:250px" />
 	```
 	to
+
 	```
 	<input id="autocomplete" type="text" class="bginput" name="query" size="35" value="$query" style="width:250px" />
 	```
