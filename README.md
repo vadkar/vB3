@@ -3,6 +3,7 @@
 * Upload the upload folder to your vBulletin 3 Server
 * Install the product-indexdepot.xml plugin
 * Upload the schema.xml to your Solr Server
+* Add stopwords_de.txt to your Solr Index
 * Go to vb/admincp/options and change the **Indexdepot Search Options**
 * Change your templates
     * **navbar line 198:**
@@ -70,6 +71,6 @@
    	
    </script>
    ```
-
+* Go to Maintenance and reindex your data
 
 ### If you do not have a Solr Server you can visit us at [www.indexdepot.com](https://www.indexdepot.com/en/ "Visit us for your o0wn Solr Index") to get your own Solr Index
