@@ -6,7 +6,9 @@
 * Go to vb/admincp/options and change the **Indexdepot Search Options**
 * Change your templates
     * **navbar line 198:** 
-	`<form action="search.php?do=process" method="post">` to `<form action="indexdepot_solrsearch.php?do=process" method="post">`
+	`<form action="search.php?do=process" method="post">` 
+	to 
+	`<form action="indexdepot_solrsearch.php?do=process" method="post">`
     * **navbar line 206:** 
         `<input type="text" class="bginput" name="query" size="25" tabindex="1001" />` to `<input id="autocomplete" type="text" class="bginput" name="query" size="25" tabindex="1001" />`
     * **search_forums line 31:** 
