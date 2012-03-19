@@ -18,7 +18,6 @@
 	```
 	
     * **navbar line 206:**
-    	
     	```
     	<input type="text" class="bginput" name="query" size="25" tabindex="1001" />
 	```
