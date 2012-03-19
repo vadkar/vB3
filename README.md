@@ -18,12 +18,16 @@
     * **headinclude from line 25 add:**
 
 
-   `<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" type="text/css" media="screen"> 
-   </link>`
-   
+<code>
+   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" type="text/css" media="screen"> 
+   </link>
+</code>
+
+<pre>
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
    </script>
-   
+</pre>
+
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"> 
    </script>
    
