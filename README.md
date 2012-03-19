@@ -18,10 +18,10 @@
     * **headinclude from line 25 add:**
 
 
-<code>
+<tt>
    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css" type="text/css" media="screen"> 
    </link>
-</code>
+</tt>
 
 <pre>
    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js">
