@@ -5,10 +5,18 @@
 * Upload the schema.xml to your Solr Server
 * Go to vb/admincp/options and change the **Indexdepot Search Options**
 * Change your templates
-    * **navbar line 198:** 
-	`<form action="search.php?do=process" method="post">` 
-	to 
-	`<form action="indexdepot_solrsearch.php?do=process" method="post">`
+    * **navbar line 198:**
+    
+	```
+	<form action="search.php?do=process" method="post">
+	```
+
+	to
+	
+	```
+	<form action="indexdepot_solrsearch.php?do=process" method="post">
+	```
+	
     * **navbar line 206:**
     	
         ```
