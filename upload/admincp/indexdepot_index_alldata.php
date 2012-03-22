@@ -39,7 +39,7 @@ if ($_REQUEST['do'] == 'index') {
                 . " f.forumid AS f_id , f.title AS f_title, p.visible AS p_visible\n"
                 . "FROM " . TABLE_PREFIX . "post p\n"
                 . "INNER JOIN " . TABLE_PREFIX . "thread t ON p.threadid = t.threadid\n"
-                . "INNER JOIN " . TABLE_PREFIX . "forum f ON t.forumid = f.forumid LIMIT 0, 30 ";
+                . "INNER JOIN " . TABLE_PREFIX . "forum f ON t.forumid = f.forumid ";
 
         $posts = $db->query_read($sql);
 

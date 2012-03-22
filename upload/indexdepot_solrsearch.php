@@ -164,6 +164,14 @@ if ($_REQUEST['do'] == 'process')
 
     ));
     
+    if (fetch_require_hvcheck('search')) {
+        require_once(DIR . '/includes/class_humanverify.php');
+        $verify = & vB_HumanVerify::fetch_library($vbulletin);
+        if (!$verify->verify_token($vbulletin->GPC['humanverify'])) {
+            eval(standard_error(fetch_error($verify->fetch_error(), $vbulletin->session->vars['sessionurl']), '', false));
+        }
+    }
+    
     /* init solr attributes */
     $filters = array();    
     $query = '';
